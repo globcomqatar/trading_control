@@ -1,0 +1,58 @@
+[
+ {
+  "doctype": "Workflow State",
+  "name": "Draft",
+  "workflow_state_name": "Draft",
+  "style": "",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Pending Approval",
+  "workflow_state_name": "Pending Approval",
+  "style": "Warning",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Approved",
+  "workflow_state_name": "Approved",
+  "style": "Primary",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Pushed",
+  "workflow_state_name": "Pushed",
+  "style": "Info",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Applied",
+  "workflow_state_name": "Applied",
+  "style": "Success",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Rejected",
+  "workflow_state_name": "Rejected",
+  "style": "Danger",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Superseded",
+  "workflow_state_name": "Superseded",
+  "style": "Inverse",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "Push Failed",
+  "workflow_state_name": "Push Failed",
+  "style": "Danger",
+  "modified": "2026-10-20 13:40:00.000000"
+ }
+]

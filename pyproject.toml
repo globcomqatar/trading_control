@@ -1,0 +1,39 @@
+[project]
+name = "trading_control"
+authors = [
+    { name = "Waheed Ali", email = "admin@aiopctrading.com" }
+]
+description = "Trading Control portal for MT5 EAs: config approval, status feed and Ask Hamza chat"
+requires-python = ">=3.14,<3.15"
+readme = "README.md"
+license = { file = "license.txt" }
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=16.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0,<17.0.0"
+
+[tool.bench.dev-dependencies]
+
+[deploy.dependencies.apt]
+packages = []
+
+[tool.ruff]
+line-length = 110
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "UP", "B", "RUF"]
+ignore = ["E101", "E402", "E501", "W191", "B017", "B018", "RUF001", "RUF002", "RUF003", "RUF012"]
+typing-modules = ["frappe.types.DF"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"
+docstring-code-format = true

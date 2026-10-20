@@ -1,0 +1,26 @@
+[
+ {
+  "doctype": "Workflow Action Master",
+  "name": "Submit for Approval",
+  "workflow_action_name": "Submit for Approval",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow Action Master",
+  "name": "Approve",
+  "workflow_action_name": "Approve",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow Action Master",
+  "name": "Reject",
+  "workflow_action_name": "Reject",
+  "modified": "2026-10-20 13:40:00.000000"
+ },
+ {
+  "doctype": "Workflow Action Master",
+  "name": "Send Back",
+  "workflow_action_name": "Send Back",
+  "modified": "2026-10-20 13:40:00.000000"
+ }
+]

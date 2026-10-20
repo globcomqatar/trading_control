@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+*.egg-info
+.DS_Store
+node_modules/
+trading_control/public/dist/
+.env
+*.log

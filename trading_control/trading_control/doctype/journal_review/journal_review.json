@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ea_instance",
+  "type",
+  "cb1",
+  "period_from",
+  "period_to",
+  "author",
+  "sb_b",
+  "summary",
+  "lessons",
+  "linked_trades"
+ ],
+ "fields": [
+  {
+   "fieldname": "ea_instance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "EA Instance",
+   "options": "EA Instance"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Trade Review\nDaily\nWeekly"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "period_from",
+   "fieldtype": "Datetime",
+   "label": "Period From"
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "period_to",
+   "fieldtype": "Datetime",
+   "label": "Period To"
+  },
+  {
+   "default": "__user",
+   "fieldname": "author",
+   "fieldtype": "Link",
+   "label": "Author",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Text Editor",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "lessons",
+   "fieldtype": "Small Text",
+   "label": "Lessons"
+  },
+  {
+   "fieldname": "linked_trades",
+   "fieldtype": "Table MultiSelect",
+   "label": "Linked Trades",
+   "options": "Journal Review Trade"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 13:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Journal Review",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Viewer",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

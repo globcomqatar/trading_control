@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ea_instance",
+  "symbol",
+  "action",
+  "sl_usd",
+  "tp_usd",
+  "source",
+  "cb1",
+  "status",
+  "expires_at",
+  "decided_by",
+  "decided_at",
+  "cmd_id",
+  "result",
+  "sb_r",
+  "reason",
+  "source_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "ea_instance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "EA Instance",
+   "options": "EA Instance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "symbol",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Symbol",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Action",
+   "options": "BUY\nSELL\nCLOSE",
+   "reqd": 1
+  },
+  {
+   "description": "Must be > 0.",
+   "fieldname": "sl_usd",
+   "fieldtype": "Float",
+   "label": "SL (USD)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tp_usd",
+   "fieldtype": "Float",
+   "label": "TP (USD)"
+  },
+  {
+   "default": "manual",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "manual\nhamza"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Pending\nApproved\nRejected\nExpired\nExecuted",
+   "read_only": 1
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3); default now + 5 min",
+   "fieldname": "expires_at",
+   "fieldtype": "Datetime",
+   "label": "Expires At"
+  },
+  {
+   "fieldname": "decided_by",
+   "fieldtype": "Link",
+   "label": "Decided By",
+   "no_copy": 1,
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "decided_at",
+   "fieldtype": "Datetime",
+   "label": "Decided At",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cmd_id",
+   "fieldtype": "Data",
+   "label": "Command ID",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Small Text",
+   "label": "Result",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_r",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "description": "Raven Message id this proposal came from (optional). Data field so the app works without Raven.",
+   "fieldname": "source_message",
+   "fieldtype": "Data",
+   "label": "Source Message",
+   "read_only_depends_on": "eval:!doc.__islocal"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Trade Signal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Viewer",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

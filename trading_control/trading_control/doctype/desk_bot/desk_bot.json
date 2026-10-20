@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "autoname": "field:display_name",
+ "creation": "2026-10-20 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "display_name",
+  "bot_user",
+  "raven_user",
+  "role_on_desk",
+  "cb1",
+  "enabled",
+  "max_replies_per_hour",
+  "sb1",
+  "routine_webhook_url",
+  "routine_secret"
+ ],
+ "fields": [
+  {
+   "fieldname": "display_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Display Name",
+   "reqd": 1
+  },
+  {
+   "description": "API-only Frappe user (roles: Trading Assistant + Raven User only)",
+   "fieldname": "bot_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bot User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Raven User id (usually same as bot user). Data, not Link, so the app works without Raven.",
+   "fieldname": "raven_user",
+   "fieldtype": "Data",
+   "label": "Raven User"
+  },
+  {
+   "default": "specialist",
+   "fieldname": "role_on_desk",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role on Desk",
+   "options": "specialist\nmoderator"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "default": "20",
+   "description": "0 = no hourly cap",
+   "fieldname": "max_replies_per_hour",
+   "fieldtype": "Int",
+   "label": "Max Replies per Hour"
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "Grok Bot routine"
+  },
+  {
+   "fieldname": "routine_webhook_url",
+   "fieldtype": "Data",
+   "label": "Routine Webhook URL",
+   "options": "URL"
+  },
+  {
+   "description": "HMAC key for X-TC-Signature. Never shared in chat.",
+   "fieldname": "routine_secret",
+   "fieldtype": "Password",
+   "label": "Routine Secret"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Desk Bot",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "display_name",
+ "track_changes": 1
+}

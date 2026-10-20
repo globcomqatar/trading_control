@@ -1,0 +1,241 @@
+{
+ "actions": [],
+ "autoname": "format:{ea_type}-{magic}",
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ea_type",
+  "magic",
+  "enabled",
+  "sync_state",
+  "cb1",
+  "vps",
+  "terminal_path",
+  "files_subdir",
+  "sb_acc",
+  "account_login",
+  "broker_server",
+  "cb2",
+  "ea_version",
+  "is_demo",
+  "sb_cfg",
+  "desired_config",
+  "active_config",
+  "cb3",
+  "last_seen",
+  "caps_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "ea_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "EA Type",
+   "options": "Hamza_TVBridge\nHamza_VasimMACD\nGoldDF\nHamza_Manual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "magic",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Magic",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "1",
+   "description": "Portal-side pause (pushes trading_enabled=false).",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "sync_state",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sync State",
+   "options": "\nIn Sync\nPending\nRejected\nStale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "VPS 25",
+   "fieldname": "vps",
+   "fieldtype": "Data",
+   "label": "VPS"
+  },
+  {
+   "description": "e.g. C:\\MT5 EXNESS 3",
+   "fieldname": "terminal_path",
+   "fieldtype": "Data",
+   "label": "Terminal Path"
+  },
+  {
+   "default": "HamzaTV",
+   "fieldname": "files_subdir",
+   "fieldtype": "Data",
+   "label": "Files Subdir"
+  },
+  {
+   "fieldname": "sb_acc",
+   "fieldtype": "Section Break",
+   "label": "Account"
+  },
+  {
+   "fieldname": "account_login",
+   "fieldtype": "Data",
+   "label": "Account Login"
+  },
+  {
+   "fieldname": "broker_server",
+   "fieldtype": "Data",
+   "label": "Broker Server"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ea_version",
+   "fieldtype": "Data",
+   "label": "EA Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_demo",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Demo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_cfg",
+   "fieldtype": "Section Break",
+   "label": "Config"
+  },
+  {
+   "fieldname": "desired_config",
+   "fieldtype": "Link",
+   "label": "Desired Config",
+   "options": "EA Config Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "active_config",
+   "fieldtype": "Link",
+   "label": "Active Config (acked)",
+   "options": "EA Config Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "last_seen",
+   "fieldtype": "Datetime",
+   "label": "Last Seen",
+   "read_only": 1
+  },
+  {
+   "description": "Chart-input caps reported by the EA.",
+   "fieldname": "caps_json",
+   "fieldtype": "JSON",
+   "label": "Chart Caps",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 13:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "EA Instance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Viewer",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Integration",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name",
+ "track_changes": 1
+}

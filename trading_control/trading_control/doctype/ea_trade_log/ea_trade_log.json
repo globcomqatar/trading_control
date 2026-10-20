@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_id",
+  "ea_instance",
+  "event",
+  "symbol",
+  "side",
+  "volume",
+  "event_time",
+  "cb1",
+  "ticket",
+  "deal_id",
+  "cmd_id",
+  "price_open",
+  "sl",
+  "tp",
+  "price_close",
+  "profit",
+  "reason"
+ ],
+ "fields": [
+  {
+   "description": "Idempotency key: deal_id+event or cmd_id+event",
+   "fieldname": "event_id",
+   "fieldtype": "Data",
+   "label": "Event ID",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "ea_instance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "EA Instance",
+   "options": "EA Instance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "open\npartial\nbe\nclose\nreject"
+  },
+  {
+   "fieldname": "symbol",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Symbol"
+  },
+  {
+   "fieldname": "side",
+   "fieldtype": "Select",
+   "label": "Side",
+   "options": "\nBUY\nSELL"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume"
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "event_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Event Time"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket",
+   "fieldtype": "Data",
+   "label": "Ticket"
+  },
+  {
+   "fieldname": "deal_id",
+   "fieldtype": "Data",
+   "label": "Deal ID"
+  },
+  {
+   "fieldname": "cmd_id",
+   "fieldtype": "Data",
+   "label": "Command ID"
+  },
+  {
+   "fieldname": "price_open",
+   "fieldtype": "Float",
+   "label": "Price Open"
+  },
+  {
+   "fieldname": "sl",
+   "fieldtype": "Float",
+   "label": "SL"
+  },
+  {
+   "fieldname": "tp",
+   "fieldtype": "Float",
+   "label": "TP"
+  },
+  {
+   "fieldname": "price_close",
+   "fieldtype": "Float",
+   "label": "Price Close"
+  },
+  {
+   "fieldname": "profit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Profit"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 13:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "EA Trade Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Viewer",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Integration",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "symbol",
+ "track_changes": 1
+}

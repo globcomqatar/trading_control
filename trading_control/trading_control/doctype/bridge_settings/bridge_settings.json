@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_bridge",
+  "bridge_url",
+  "config_url",
+  "config_hmac_secret",
+  "cb1",
+  "push_enabled",
+  "max_clock_skew_sec",
+  "stale_after_sec",
+  "push_timeout_sec",
+  "sb_tg",
+  "telegram_bot_token",
+  "telegram_chat_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_bridge",
+   "fieldtype": "Section Break",
+   "label": "Bridge (VPS receiver)"
+  },
+  {
+   "description": "e.g. https://tvbridge.aiopctrading.com (set in the UI, not in code)",
+   "fieldname": "bridge_url",
+   "fieldtype": "Data",
+   "label": "Bridge Base URL"
+  },
+  {
+   "description": "Full URL of the receiver /config endpoint. Empty = pushes are skipped and logged.",
+   "fieldname": "config_url",
+   "fieldtype": "Data",
+   "label": "Config Endpoint URL"
+  },
+  {
+   "description": "Shared with VPS env TCP_CONFIG_SECRET.",
+   "fieldname": "config_hmac_secret",
+   "fieldtype": "Password",
+   "label": "Config HMAC Secret"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Kill switch for the push path.",
+   "fieldname": "push_enabled",
+   "fieldtype": "Check",
+   "label": "Push Enabled"
+  },
+  {
+   "default": "60",
+   "fieldname": "max_clock_skew_sec",
+   "fieldtype": "Int",
+   "label": "Max Clock Skew (sec)"
+  },
+  {
+   "default": "120",
+   "fieldname": "stale_after_sec",
+   "fieldtype": "Int",
+   "label": "Stale After (sec)"
+  },
+  {
+   "default": "15",
+   "fieldname": "push_timeout_sec",
+   "fieldtype": "Int",
+   "label": "Push Timeout (sec)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_tg",
+   "fieldtype": "Section Break",
+   "label": "Telegram (phase 5)"
+  },
+  {
+   "fieldname": "telegram_bot_token",
+   "fieldtype": "Password",
+   "label": "Telegram Bot Token"
+  },
+  {
+   "fieldname": "telegram_chat_id",
+   "fieldtype": "Data",
+   "label": "Telegram Chat ID"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-20 13:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Bridge Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

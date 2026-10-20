@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ea_instance",
+  "based_on_version",
+  "status",
+  "cb1",
+  "reviewed_by",
+  "reviewed_at",
+  "resulting_version",
+  "sb_p",
+  "proposed_values",
+  "diff",
+  "reasoning",
+  "evidence",
+  "source_message",
+  "review_note"
+ ],
+ "fields": [
+  {
+   "fieldname": "ea_instance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "EA Instance",
+   "options": "EA Instance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "based_on_version",
+   "fieldtype": "Link",
+   "label": "Based On Version",
+   "options": "EA Config Version"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "no_copy": 1,
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "description": "Qatar time (Asia/Qatar, UTC+3)",
+   "fieldname": "reviewed_at",
+   "fieldtype": "Datetime",
+   "label": "Reviewed At",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "resulting_version",
+   "fieldtype": "Link",
+   "label": "Resulting Version",
+   "no_copy": 1,
+   "options": "EA Config Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_p",
+   "fieldtype": "Section Break",
+   "label": "Proposal"
+  },
+  {
+   "description": "Same keys as EA Config Version config fields.",
+   "fieldname": "proposed_values",
+   "fieldtype": "JSON",
+   "label": "Proposed Values",
+   "reqd": 1
+  },
+  {
+   "fieldname": "diff",
+   "fieldtype": "JSON",
+   "label": "Diff (auto)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reasoning",
+   "fieldtype": "Text",
+   "label": "Reasoning",
+   "reqd": 1
+  },
+  {
+   "fieldname": "evidence",
+   "fieldtype": "Small Text",
+   "label": "Evidence"
+  },
+  {
+   "description": "Raven Message id this proposal came from (optional). Data field so the app works without Raven.",
+   "fieldname": "source_message",
+   "fieldtype": "Data",
+   "label": "Source Message",
+   "read_only_depends_on": "eval:!doc.__islocal"
+  },
+  {
+   "fieldname": "review_note",
+   "fieldtype": "Small Text",
+   "label": "Review Note"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-20 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Config Change Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Viewer",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Trading Assistant",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

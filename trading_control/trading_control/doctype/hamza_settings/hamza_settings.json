@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "creation": "2026-10-20 13:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "webhook_url",
+  "webhook_secret",
+  "hamza_user",
+  "cb1",
+  "telegram_alerts",
+  "chat_channel",
+  "timeout_sec"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "description": "Hamza's inbound webhook. Empty = messages are stored but not sent.",
+   "fieldname": "webhook_url",
+   "fieldtype": "Data",
+   "label": "Webhook URL"
+  },
+  {
+   "description": "Signs outbound calls (same HMAC scheme as config push).",
+   "fieldname": "webhook_secret",
+   "fieldtype": "Password",
+   "label": "Webhook Secret"
+  },
+  {
+   "description": "The API-only user with the Trading Assistant role.",
+   "fieldname": "hamza_user",
+   "fieldtype": "Link",
+   "label": "Hamza User",
+   "options": "User"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "telegram_alerts",
+   "fieldtype": "Check",
+   "label": "Telegram Alerts"
+  },
+  {
+   "fieldname": "chat_channel",
+   "fieldtype": "Data",
+   "label": "Chat Channel"
+  },
+  {
+   "default": "10",
+   "fieldname": "timeout_sec",
+   "fieldtype": "Int",
+   "label": "Timeout (sec)"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-20 13:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Hamza Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,167 @@
+[
+ {
+  "doctype": "Workflow",
+  "name": "EA Config Version Approval",
+  "workflow_name": "EA Config Version Approval",
+  "document_type": "EA Config Version",
+  "is_active": 1,
+  "override_status": 1,
+  "send_email_alert": 0,
+  "workflow_state_field": "status",
+  "states": [
+   {
+    "doctype": "Workflow Document State",
+    "state": "Draft",
+    "doc_status": "0",
+    "allow_edit": "TC Admin",
+    "update_field": "",
+    "is_optional_state": 0,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Pending Approval",
+    "doc_status": "0",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 0,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Approved",
+    "doc_status": "1",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 0,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Rejected",
+    "doc_status": "0",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 0,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Pushed",
+    "doc_status": "1",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 1,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Applied",
+    "doc_status": "1",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 1,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Superseded",
+    "doc_status": "1",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 1,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Document State",
+    "state": "Push Failed",
+    "doc_status": "1",
+    "allow_edit": "TC Approver",
+    "update_field": "",
+    "is_optional_state": 1,
+    "parentfield": "states",
+    "parenttype": "Workflow"
+   }
+  ],
+  "transitions": [
+   {
+    "doctype": "Workflow Transition",
+    "state": "Draft",
+    "next_state": "Pending Approval",
+    "action": "Submit for Approval",
+    "allowed": "TC Admin",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Draft",
+    "next_state": "Pending Approval",
+    "action": "Submit for Approval",
+    "allowed": "TC Approver",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Pending Approval",
+    "next_state": "Approved",
+    "action": "Approve",
+    "allowed": "TC Approver",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Pending Approval",
+    "next_state": "Rejected",
+    "action": "Reject",
+    "allowed": "TC Approver",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Pending Approval",
+    "next_state": "Draft",
+    "action": "Send Back",
+    "allowed": "TC Approver",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Rejected",
+    "next_state": "Draft",
+    "action": "Send Back",
+    "allowed": "TC Admin",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   },
+   {
+    "doctype": "Workflow Transition",
+    "state": "Rejected",
+    "next_state": "Draft",
+    "action": "Send Back",
+    "allowed": "TC Approver",
+    "allow_self_approval": 1,
+    "parentfield": "transitions",
+    "parenttype": "Workflow"
+   }
+  ],
+  "modified": "2026-10-20 13:40:00.000000"
+ }
+]

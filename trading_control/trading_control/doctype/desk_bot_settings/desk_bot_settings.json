@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "creation": "2026-10-20 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "raven_webhook_secret",
+  "owner_user",
+  "cb1",
+  "moderator",
+  "gold_desk_channel",
+  "hop_limit",
+  "thread_reply_cap"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "description": "Off = all bots silent",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled (kill switch)"
+  },
+  {
+   "description": "Same value as the Raven Webhook secret",
+   "fieldname": "raven_webhook_secret",
+   "fieldtype": "Password",
+   "label": "Raven Webhook Secret"
+  },
+  {
+   "description": "Waheed: the only user whose 'stop' mutes a thread and whose plain #gold-desk messages wake the moderator",
+   "fieldname": "owner_user",
+   "fieldtype": "Link",
+   "label": "Owner User",
+   "options": "User"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "moderator",
+   "fieldtype": "Link",
+   "label": "Moderator",
+   "options": "Desk Bot"
+  },
+  {
+   "description": "Raven Channel id of #gold-desk",
+   "fieldname": "gold_desk_channel",
+   "fieldtype": "Data",
+   "label": "Gold Desk Channel"
+  },
+  {
+   "default": "2",
+   "fieldname": "hop_limit",
+   "fieldtype": "Int",
+   "label": "Hop Limit"
+  },
+  {
+   "default": "6",
+   "description": "Max bot replies per thread per owner message",
+   "fieldname": "thread_reply_cap",
+   "fieldtype": "Int",
+   "label": "Thread Reply Cap"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-20 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Trading Control",
+ "name": "Desk Bot Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Admin",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TC Approver",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
