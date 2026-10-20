@@ -53,6 +53,7 @@ def routine_headers(secret: str, body: bytes, ts: int) -> dict:
 		"Content-Type": "application/json",
 		"X-TC-Timestamp": ts_s,
 		"X-TC-Signature": routine_signature(secret, ts_s, body),
+		"Authorization": f"Bearer {secret}",
 	}
 
 
